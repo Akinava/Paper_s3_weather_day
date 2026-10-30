@@ -13,8 +13,8 @@
 #include <Preferences.h>
 #include "fonts.h"
 
-static const char* WIFI_SSID = "Akinava24";
-static const char* WIFI_PASS = "kkn6thfvTqFj";
+static const char* WIFI_SSID = "AkinavaPi";
+static const char* WIFI_PASS = "DyXH7q4gjFzcLTuX";
 // Основной роутер сети. Используется, если шлюз/DNS из DHCP не работают.
 static const IPAddress FALLBACK_GW(192, 168, 178, 1);
 

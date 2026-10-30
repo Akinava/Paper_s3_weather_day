@@ -27,7 +27,7 @@
 
 ## Настройки
 
-Все настройки находятся в начале файла `Paper_s3_weather.ino`.
+Все настройки находятся в начале файла `Paper_s3_weather_day.ino`.
 
 | Параметр | Назначение |
 |---|---|
@@ -38,7 +38,7 @@
 ## Сборка и прошивка
 
 Что нужно:
-- arduino-cli;
+- arduino-cli (не snap-версия: из snap-песочницы он не видит ядра в `~/.arduino15`);
 - ядро `m5stack:esp32` (проверено на 3.2.2);
 - библиотеки **M5Unified**, **M5GFX** и **ArduinoJson** 7.x.
 
@@ -53,13 +53,13 @@ arduino-cli compile -b m5stack:esp32:m5stack_papers3 \
 Первая прошивка, вместе с таблицей разделов:
 
 ```bash
-esptool --chip esp32s3 -p /dev/ttyACM0 -b 460800 write_flash -z 0x0 build/Paper_s3_weather.ino.merged.bin
+esptool --chip esp32s3 -p /dev/ttyACM0 -b 460800 write_flash -z 0x0 build/Paper_s3_weather_day.ino.merged.bin
 ```
 
 Следующие обновления, только приложение. Так быстрее, и кэш погоды сохраняется:
 
 ```bash
-esptool --chip esp32s3 -p /dev/ttyACM0 -b 460800 write_flash -z 0x10000 build/Paper_s3_weather.ino.bin
+esptool --chip esp32s3 -p /dev/ttyACM0 -b 460800 write_flash -z 0x10000 build/Paper_s3_weather_day.ino.bin
 ```
 
 Используйте esptool из ядра Arduino, например `~/.arduino15/packages/esp32/tools/esptool_py/5.0.0/esptool`. В системном пакете esptool нет stub-загрузчика для ESP32-S3.
@@ -101,7 +101,7 @@ python3 tools/make_fonts.py
 
 ## Файлы
 
-- `Paper_s3_weather.ino` — исходный код прошивки.
+- `Paper_s3_weather_day.ino` — исходный код прошивки.
 - `fonts.h` — сгенерированные шрифты.
 - `tools/make_fonts.py` — генератор шрифтов.
 - `partitions.csv` — таблица разделов: NVS, приложение 6 МБ, SPIFFS, coredump.
