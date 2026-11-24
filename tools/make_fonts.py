@@ -4,7 +4,7 @@ import struct, os
 from PIL import ImageFont
 
 DIR = "/usr/share/fonts/truetype/dejavu/"
-TEXT = ([chr(c) for c in range(0x21, 0x7F)] + ["°", "Ё", "ё", "—", "«", "»", "·"]
+TEXT = ([chr(c) for c in range(0x21, 0x7F)] + ["°", "Ё", "ё", "—", "−", "«", "»", "·"]
         + [chr(c) for c in range(0x410, 0x450)])
 DIGITS = list("+-−0123456789°.,")
 

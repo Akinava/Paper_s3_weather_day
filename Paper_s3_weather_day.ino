@@ -13,15 +13,15 @@
 #include <Preferences.h>
 #include "fonts.h"
 
-static const char* WIFI_SSID = "AkinavaPi";
-static const char* WIFI_PASS = "DyXH7q4gjFzcLTuX";
+static const char* WIFI_SSID = "";
+static const char* WIFI_PASS = "";
 // Основной роутер сети. Используется, если шлюз/DNS из DHCP не работают.
 static const IPAddress FALLBACK_GW(192, 168, 178, 1);
 
 // Оставьте NAN, чтобы определять местоположение автоматически по IP.
 static const float FIXED_LAT = NAN;
 static const float FIXED_LON = NAN;
-static const char* FIXED_CITY = "";
+static const char* FIXED_CITY = "Димен";
 
 // Почасовой прогноз: 24 часа, начиная с ближайшего прошедшего часа, кратного 3.
 // 25 точек — чтобы график заканчивался подписью через сутки.
